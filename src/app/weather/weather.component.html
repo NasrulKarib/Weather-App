@@ -1,0 +1,10 @@
+<div class="weather-app">
+    <h1>Weather App</h1>
+    <input [(ngModel)]="cityName" placeholder="Enter city name" />
+    <button (click)="fetchWeather()">Get Weather</button>
+  
+    <p *ngIf="apiError" style="color: red;">{{ apiError }}</p>
+  
+    <app-weather-details [weatherData]="weatherData"></app-weather-details>
+  </div>
+  
