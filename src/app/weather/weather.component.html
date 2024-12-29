@@ -1,10 +1,12 @@
-<div class="weather-app">
-    <h1>Weather App</h1>
-    <input [(ngModel)]="cityName" placeholder="Enter city name" />
-    <button (click)="fetchWeather()">Get Weather</button>
-  
-    <p *ngIf="apiError" style="color: red;">{{ apiError }}</p>
-  
-    <app-weather-details [weatherData]="weatherData"></app-weather-details>
+<div class="weather-app bg-gradient-to-r from-blue-400 to-blue-600 min-h-screen flex flex-col items-center justify-center p-8">
+    <h1 class="text-white text-4xl font-bold mb-6">Weather App</h1>
+    <input [(ngModel)]="cityName" placeholder="Enter city name" class="p-3 rounded-lg w-72 mb-4 text-black" />
+    <button (click)="fetchWeather()" class="bg-white text-blue-600 p-3 rounded-lg hover:bg-blue-200 transition">Get Weather</button>
+    
+    <p *ngIf="apiError" class="text-red-500 mt-4">{{ apiError }}</p>
+    
+    <div class="mt-8">
+        <app-weather-details [weatherData]="weatherData"></app-weather-details>
+    </div>
   </div>
   

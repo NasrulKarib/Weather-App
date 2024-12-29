@@ -7,4 +7,8 @@ import { Component , Input} from '@angular/core';
 })
 export class WeatherDetailsComponent {
   @Input() weatherData: any;
+
+  getRoundedTemp(temp: number): number {
+    return Math.round(temp);
+  }
 }
