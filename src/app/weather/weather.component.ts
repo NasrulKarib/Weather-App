@@ -9,13 +9,13 @@ import { Observable } from 'rxjs';
 })
 export class WeatherComponent {
   cityName: string = 'Dhaka';
-  weatherData: any;
+  weatherData: any = null;
   apiError:string = '';
 
   constructor(private http: HttpClient) {}
 
   fetchWeather() {
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${this.cityName}&APPID=2a7fd028a5e98142622cd59916f6baeb&units=metric`;
+    const apiUrl = `https://weather-app-backend-xpfl.vercel.app/weather/${this.cityName}`;
     this.getWeatherData(apiUrl).subscribe({
       next: (data) => {
         this.weatherData = data;

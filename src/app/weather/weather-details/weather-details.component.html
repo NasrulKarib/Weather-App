@@ -1,44 +1,42 @@
 <div *ngIf="weatherData" class="weather-details-container">
-  <!-- Parent box with title -->
   <div class="weather-box">
-    <h2 class="text-3xl font-bold mb-4">Weather in {{ weatherData.name }}</h2>
+    <h2 class="text-3xl font-bold mb-4">Weather in {{ weatherData.cityName }}</h2>
     
-    <!-- Grid for individual feature boxes -->
     <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
       <div class="feature-box">
         <div class="flex items-center">
           <i class="fas fa-thermometer-half mr-2 text-lg"></i>
-          <p><strong>Temperature:</strong> {{ getRoundedTemp(weatherData.main.temp) }}°C</p>
+          <p><strong>Temperature:</strong> {{ getRoundedTemp(weatherData.temperature)}}°C</p>
         </div>
       </div>
       <div class="feature-box">
         <div class="flex items-center">
           <i class="fas fa-temperature-low mr-2 text-lg"></i>
-          <p><strong>Feels Like:</strong> {{ getRoundedTemp(weatherData.main.feels_like) }}°C</p>
+          <p><strong>Feels Like:</strong> {{ getRoundedTemp(weatherData.feelsLike)}}°C</p>
         </div>
       </div>
       <div class="feature-box">
         <div class="flex items-center">
           <i class="fas fa-cloud mr-2 text-lg"></i>
-          <p><strong>Condition:</strong> {{ weatherData.weather[0].description }}</p>
+          <p><strong>Condition:</strong> {{ weatherData.condition}}</p>
         </div>
       </div>
       <div class="feature-box">
         <div class="flex items-center">
           <i class="fas fa-tachometer-alt mr-2 text-lg"></i>
-          <p><strong>Pressure:</strong> {{ weatherData.main.pressure }} hPa</p>
+          <p><strong>Pressure:</strong> {{ weatherData.pressure}} hPa</p>
         </div>
       </div>
       <div class="feature-box">
         <div class="flex items-center">
           <i class="fas fa-water mr-2 text-lg"></i>
-          <p><strong>Humidity:</strong> {{ weatherData.main.humidity }}%</p>
+          <p><strong>Humidity:</strong> {{ weatherData.humidity}}%</p>
         </div>
       </div>
       <div class="feature-box">
         <div class="flex items-center">
           <i class="fas fa-wind mr-2 text-lg"></i>
-          <p><strong>Wind Speed:</strong> {{ weatherData.wind.speed }} m/s</p>
+          <p><strong>Wind Speed:</strong> {{ weatherData.windSpeed}} m/s</p>
         </div>
       </div>
     </div>
