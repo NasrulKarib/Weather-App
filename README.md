@@ -1,3 +1,7 @@
+# Live Server
+
+Link: https://weather115.netlify.app/
+
 # WeatherApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.
